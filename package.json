@@ -1,0 +1,23 @@
+{
+  "name": "backend-project",
+  "version": "1.0.0",
+  "description": "a backend project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "js",
+    "backedend"
+  ],
+  "author": "Yatharth",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yatharth202/backend.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yatharth202/backend/issues"
+  },
+  "homepage": "https://github.com/yatharth202/backend#readme"
+}
