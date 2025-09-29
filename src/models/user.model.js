@@ -54,7 +54,7 @@ const userSchema = new schema(
     }
 )
 
-userSchema.pre("save",async function (next) {
+userSchema.pre("save",async function (next) { // .pre is a hook middleware // save hone se pahalge hash kar do
     if(!this.isModified("password")) return next();
     this.password=brcrypt.hash(this.password,10) // No of rounds hash rounds
     next()
@@ -65,7 +65,7 @@ userSchema.methods.isPasswordCorrect = async function(password){
 }
 
 userSchema.methods.generateAccessToken = function(){
-    return jwt.sign(
+    return jwt.sign( //.sign generate token in jwt
     { //payLoad
         _id: this._id,
         email: this.email,

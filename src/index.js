@@ -1,18 +1,17 @@
 // require('dotenv').config({path: './env'})
-import dotenv from "dotenv"
+import express from "express";
+import dotenv from "dotenv" // as ealry as possible import and cofigure .env //jitne jaldi application load ho utne jaldi envirement variable sari jagaha avaialbae hojane chaiye
 import connectDB from "./db/index.js";
 
-
-// import mongoose from "mongoose";
-// import {DB_NAME, DM_NAME} from "./constants";
 
 
 dotenv.config({
     path: './env'
 })
 
+const app = express();
 
-connectDB()
+connectDB() //return promises
 .then(()=>{
     app.listen(process.env.PORT || 8000, ()=>{
         console.log(` Server is running at port : ${process.env.PORT}`)
@@ -23,6 +22,18 @@ connectDB()
 })
 
 
+//copy
+// (async () => {
+//     try {
+//        await mongoose.connect(`${process.env.MONGODB_URI}/${DB_NAME}`)
+//        app.on("error",(error)=>{ //Data base connect hoogya hai but express ki app se baat nahi kar paarahi hoo 
+//         console.log("Application not able to talk to Database",error)
+//        })
+//     } catch (error) {
+//         console.log("Error: ",error)
+//         throw error
+//     }
+// })() // iefies
 
 
 

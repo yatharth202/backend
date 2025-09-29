@@ -1,5 +1,8 @@
+
+//this is a wrapper function
+
 const asyncHandler = (resquestHandler) => {
-    (req,res,next) =>{
+    return (req,res,next) =>{
         Promise.resolve(resquestHandler(req,res,next)).
         catch((err)=>next(err))
     }
@@ -7,13 +10,13 @@ const asyncHandler = (resquestHandler) => {
 
 export {asyncHandler}
 
-// const asyncHandler = (fun) => async (req,res,next) => {
+// const asyncHandler = (fn) => async (req,res,next) => {
 //     try{
 //         await fn(req,res,next)
 //     } catch(error){
 //         res.status((err.code || 500).json({
 //             sucess: false,
-//             messafe: err.message
+//             message: err.message
 //         }))
 //     }
 // }
